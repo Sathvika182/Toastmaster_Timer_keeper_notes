@@ -1,0 +1,64 @@
+/* Center the content on the page */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Style the heading */
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+/* Style the container */
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Style the label */
+label {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Style the input field */
+input {
+  font-size: 1.2em;
+  padding: 0.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  width: 50%;
+}
+
+/* Style the buttons */
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  margin: 0 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style the elapsed time display */
+#time {
+  font-size: 2em;
+  margin: 1em 0;
+}

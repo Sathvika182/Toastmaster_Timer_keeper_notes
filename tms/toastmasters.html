@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tms</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <center>
+    <form name="f1" action="./TimerServlet" method="post">
+      <h1>Toastmasters Timer Notes</h1>
+<table>
+      <tr>
+        <td> Roleplayer </td>
+        <td><input type="text" name="rolepalyer" id="rolepalyer" size="30"></td>
+      </tr><br><br>
+      <tr>
+        <td> Toastmaster </td>
+        <td><input type="text" name="toastmaster" id="toastmaster" size="30"></td>
+      </tr><br>
+</table>
+      <p>Elapsed time: <input type="text" id="time" name="time" value="0.00 seconds"></p>
+      <div id="buttons">
+        <button type="button" id="start">Start</button>
+        <button type="button" id="stop">Stop</button>
+      </div><br>
+      <button type="submit" id="submit">Submit</button>
+    </form>
+</center>
+    <script>
+      var startTime;
+      var intervalId;
+      var startButton = document.getElementById("start");
+      var stopButton = document.getElementById("stop");
+      var elapsedTime = document.getElementById("time");
+     
+      
+      startButton.onclick = function() {
+        startTime = Date.now();
+        intervalId = setInterval(updateTime, 10);
+      }
+      
+      stopButton.onclick = function() {
+        clearInterval(intervalId);
+      }
+      
+      function updateTime() {
+        var timeElapsed = Date.now() - startTime;
+        var minutes = Math.floor(timeElapsed / 60000);
+        var seconds = ((timeElapsed % 60000) / 1000).toFixed(0);
+        document.f1.time.value = elapsedTime.innerHTML;
+	document.getElementById("time").value=minutes + "." + (seconds < 10 ? '0' : '') + seconds + " seconds"
+      }
+    </script>
+  </body>
+</html>
